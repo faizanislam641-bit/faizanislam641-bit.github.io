@@ -1,105 +1,93 @@
-/* =========================================
-   MOBILE MENU
-========================================= */
-
+// ===============================
+// MOBILE MENU
+// ===============================
 const menu = document.querySelector('.menu');
 const links = document.querySelector('.nav-links');
 
-if (menu) {
-
+if (menu && links) {
     menu.addEventListener('click', () => {
-
         links.classList.toggle('open');
-
     });
-
 
     links.querySelectorAll('a').forEach(a => {
-
         a.addEventListener('click', () => {
-
             links.classList.remove('open');
-
         });
-
     });
-
 }
 
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
+// ===============================
+// SCROLL REVEAL ANIMATION
+// ===============================
 const observer = new IntersectionObserver(
-
     entries => {
-
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.classList.add('show');
-
                 observer.unobserve(entry.target);
-
             }
-
         });
-
     },
-
     {
-        threshold: .12
+        threshold: 0.12
     }
-
 );
 
-
-document
-    .querySelectorAll('.reveal')
-    .forEach(el => {
-
-        observer.observe(el);
-
-    });
+document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+});
 
 
-/* =========================================
-   VISITOR COUNTER
-========================================= */
+// ===============================
+// REAL PUBLIC VISITOR COUNTER
+// ===============================
 
-const visitorCount =
-    document.getElementById('visitorCount');
+const SUPABASE_URL = 'https://zjiybgviwefsamfsixxs.supabase.co';
 
+// এখানে তোমার Supabase Publishable Key বসাবে
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_X67n7QhXHSq8cbO4osJjmQ_ET4WjqKX';
 
-if (visitorCount) {
+const visitorCount = document.getElementById('visitorCount');
 
-    let visits =
-        localStorage.getItem(
-            'faizanPortfolioVisits'
+async function updateVisitorCount() {
+
+    if (!visitorCount) return;
+
+    try {
+
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/rpc/increment_portfolio_visits`,
+            {
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': SUPABASE_PUBLISHABLE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+                },
+
+                body: JSON.stringify({})
+            }
         );
 
+        if (!response.ok) {
+            throw new Error('Visitor counter request failed');
+        }
 
-    if (!visits) {
+        const totalVisits = await response.json();
 
-        visits = 1;
+        visitorCount.textContent =
+            Number(totalVisits).toLocaleString();
 
-    } else {
+    } catch (error) {
 
-        visits =
-            parseInt(visits) + 1;
+        console.error('Visitor Counter Error:', error);
 
+        // যদি database থেকে count না আসে,
+        // তাহলে 0 দেখাবে
+        visitorCount.textContent = '0';
     }
-
-
-    localStorage.setItem(
-        'faizanPortfolioVisits',
-        visits
-    );
-
-
-    visitorCount.textContent =
-        visits.toLocaleString();
-
 }
+
+updateVisitorCount();
