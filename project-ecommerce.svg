@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff2f7d"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+<rect width="1200" height="760" rx="34" fill="#0b0d14"/>
+<rect x="36" y="36" width="1128" height="688" rx="24" fill="#121622" stroke="#292f42"/>
+<text x="76" y="92" fill="#fff" font-family="Arial" font-size="26" font-weight="700">NOVA STORE</text>
+<text x="890" y="92" fill="#aeb6c9" font-family="Arial" font-size="16">Shop • About • Contact</text>
+<rect x="76" y="132" width="1048" height="210" rx="22" fill="url(#g)"/>
+<text x="112" y="204" fill="#fff" font-family="Arial" font-size="22">MODERN E-COMMERCE</text>
+<text x="112" y="250" fill="#fff" font-family="Arial" font-size="44" font-weight="700">Simple shopping.<tspan x="112" dy="48">Better experience.</tspan></text>
+<rect x="112" y="292" width="148" height="34" rx="17" fill="#fff"/>
+<text x="144" y="315" fill="#11131b" font-family="Arial" font-size="13" font-weight="700">SHOP NOW</text>
+<text x="76" y="392" fill="#fff" font-family="Arial" font-size="24" font-weight="700">Featured Products</text>
+<g>
+<rect x="76" y="422" width="318" height="238" rx="18" fill="#1a1f2c"/><rect x="98" y="444" width="274" height="126" rx="14" fill="#252b3b"/>
+<circle cx="170" cy="507" r="48" fill="#ff2f7d"/><text x="116" y="612" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Urban Headphones</text><text x="116" y="638" fill="#9da7bb" font-family="Arial" font-size="14">$89</text>
+<rect x="442" y="422" width="318" height="238" rx="18" fill="#1a1f2c"/><rect x="464" y="444" width="274" height="126" rx="14" fill="#252b3b"/>
+<rect x="570" y="465" width="62" height="84" rx="12" fill="#8b5cf6"/><text x="482" y="612" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Smart Watch</text><text x="482" y="638" fill="#9da7bb" font-family="Arial" font-size="14">$129</text>
+<rect x="808" y="422" width="316" height="238" rx="18" fill="#1a1f2c"/><rect x="830" y="444" width="272" height="126" rx="14" fill="#252b3b"/>
+<rect x="918" y="478" width="96" height="56" rx="28" fill="#ff2f7d"/><text x="848" y="612" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Travel Bag</text><text x="848" y="638" fill="#9da7bb" font-family="Arial" font-size="14">$74</text>
+</g>
+<rect x="922" y="52" width="172" height="32" rx="16" fill="#ff2f7d"/><text x="948" y="74" fill="#fff" font-family="Arial" font-size="12" font-weight="700">DEMO CONCEPT</text>
+</svg>
